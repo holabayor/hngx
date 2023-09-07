@@ -1,4 +1,23 @@
 {
+  "name": "stage_one",
+  "version": "1.0.0",
+  "description": "hng internship stage one task",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "hng",
+    "internship",
+    "backend",
+    "node",
+    "js",
+    "express",
+    "js"
+  ],
+  "author": "Liasu Aanuoluwpao",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
   }
