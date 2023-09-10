@@ -1,14 +1,15 @@
 import express from 'express';
 import router from './routes';
+import dbClient from './utils/db';
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.use(express.json());
 
 app.use('/api', router);
 
 app.listen(3000, () => {
-  console.log('Example app listening on port 3000!');
+  dbClient();
+  console.log(`Server is listening on port ${PORT}`);
 });
