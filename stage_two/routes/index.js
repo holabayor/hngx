@@ -4,8 +4,9 @@ import PersonController from '../contollers';
 const router = express.Router();
 
 router.get('/', PersonController.get);
+router.get('/:id', PersonController.getById);
 router.post('/', PersonController.create);
-router.put('/', PersonController.update);
-router.delete('/', PersonController.delete);
+router.put('/:id', PersonController.update);
+router.delete('/:id', PersonController.delete);
 
 export default router;
