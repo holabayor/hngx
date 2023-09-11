@@ -1,0 +1,40 @@
+@startuml
+
+class Person {
+  - id: int
+  - name: string
+  - age: int
+  - email: string
+  + toJson(): string
+}
+
+class PersonController {
+  - personService: PersonService
+  + createPerson(request: Request, response: Response): void
+  + getPerson(request: Request, response: Response): void
+  + updatePerson(request: Request, response: Response): void
+  + deletePerson(request: Request, response: Response): void
+}
+
+class PersonService {
+  - personRepository: PersonRepository
+  + createPerson(person: Person): Promise<Person>
+  + getPersonById(id: int): Promise<Person>
+  + updatePerson(id: int, person: Person): Promise<Person>
+  + deletePerson(id: int): Promise<void>
+}
+
+class PersonRepository {
+  + create(person: Person): Promise<Person>
+  + getById(id: int): Promise<Person>
+  + update(id: int, person: Person): Promise<Person>
+  + delete(id: int): Promise<void>
+}
+
+PersonController --> PersonService
+PersonService --> PersonRepository
+PersonController --> Person
+PersonService --> Person
+PersonRepository --> Person
+
+@enduml
