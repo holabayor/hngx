@@ -1,4 +1,4 @@
-import Person from '../models/person';
+import Person from '../models/person.js';
 
 class PersonController {
   /**

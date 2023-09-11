@@ -1,6 +1,6 @@
 import express from 'express';
-import router from './routes';
-import dbClient from './utils/db';
+import router from './routes/index.js';
+import dbClient from './utils/db.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
