@@ -8,12 +8,8 @@ class PersonController {
    * @param {object} res - The response object.
    */
   static async get(req, res) {
-    try {
-      const people = await Person.find();
-      res.status(200).send(people);
-    } catch (error) {
-      res.status(500).send({ error: 'Something went wrong' });
-    }
+    const allPeople = await Person.find();
+    res.status(200).send(allPeople);
   }
 
   /**
