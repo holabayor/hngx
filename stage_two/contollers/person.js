@@ -9,6 +9,9 @@ class PersonController {
    */
   static async get(req, res) {
     const allPeople = await Person.find();
+    if (!allPeople) {
+      res.status(404).send({ error: 'People not found' });
+    }
     res.status(200).send(allPeople);
   }
 
