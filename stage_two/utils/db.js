@@ -1,16 +1,16 @@
 import * as dotenv from 'dotenv';
-dotenv.config();
 import mongoose from 'mongoose';
 
-const dbClient = () => {
+const connectToDB = () => {
+  dotenv.config();
   mongoose
     .connect(process.env.MONGODB_URI)
     .then(() => {
       console.log('Connected to MongoDB');
     })
-    .catch((err) => {
-      console.log(err);
+    .catch((error) => {
+      console.log(error);
     });
 };
 
-export default dbClient;
+export default connectToDB;
