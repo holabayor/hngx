@@ -109,7 +109,7 @@ class PersonController {
         return res.status(404).send({ error: 'Person not found' });
       }
 
-      return res.status(204).send({ message: 'Person deleted successfully' });
+      return res.status(204).send();
     } catch (error) {
       return res.status(500).send({ error: 'Internal server error' });
     }
