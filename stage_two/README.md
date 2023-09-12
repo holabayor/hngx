@@ -74,20 +74,20 @@ GET http://localhost:3000/api
 Response
 
 ```
-
-{
-    "persons": [
-        {
-            "_id": "64ff1b27624afe2bcd44459d",
-            "name": "John Doe",
-        },
-        {
-            "_id": "64ff41664760dfb7e694f109",
-            "name": "hng",
-        }
-    ]
-}
-
+[
+    {
+        "_id": "650041f2cf55dc9a1eee4406",
+        "name": "Updated Name"
+    },
+    {
+        "_id": "65004250cf55dc9a1eee4410",
+        "name": "John Doe"
+    },
+    {
+        "_id": "650044f3b3939e2a96ba6308",
+        "name": "Scott Jones"
+    }
+]
 ```
 
 - GET a person by ID:
@@ -101,7 +101,7 @@ GET http://localhost:3000/api/:id
 Response:
 
     {
-        "_id": "64ff1b27624afe2bcd44459d",
+        "_id": "65004250cf55dc9a1eee4410",
         "name": "John Doe",
     }
 
@@ -114,11 +114,8 @@ POST http://localhost:3000/api
 Response:
 
     {
-        "message": "Person created successfully",
-        "person": {
-            "_id": "64ff1b27624afe2bcd44459d",
-            "name": "John Doe",
-        }
+        "_id": "64ff1b27624afe2bcd44459d",
+        "name": "John Doe",
     }
 
 - PUT a person by ID:
@@ -130,11 +127,8 @@ PUT http://localhost:3000/api/:id
 Response:
 
     {
-        "message": "Person updated successfully",
-        "person": {
-            "_id": "64ff1b27624afe2bcd44459d",
-            "name": "John Doe",
-        }
+        "_id": "64ff1b27624afe2bcd44459d",
+        "name": "John Doe",
     }
 
 - DELETE a person by ID:
@@ -145,13 +139,7 @@ DELETE http://localhost:3000/api/:id
 
 Response:
 
-    {
-        "message": "Person deleted successfully",
-        "person": {
-            "_id": "64ff1b27624afe2bcd44459d",
-            "name": "John Doe",
-        }
-    }
+    {}
 
 ## UML Diagram
 
