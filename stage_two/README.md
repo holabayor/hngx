@@ -159,6 +159,10 @@ Response:
         }
     }
 
+## UMl Diagram
+
+![UML Diagram](https://github.com/holabayor/hngx/blob/main/stage_two/diagrams/person%20UML.png)
+
 ## Testing
 
 To run the tests, run the following command:
