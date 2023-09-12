@@ -80,12 +80,10 @@ Response
         {
             "_id": "64ff1b27624afe2bcd44459d",
             "name": "John Doe",
-            "__v": 0
         },
         {
             "_id": "64ff41664760dfb7e694f109",
             "name": "hng",
-            "__v": 0
         }
     ]
 }
@@ -105,7 +103,6 @@ Response:
     {
         "_id": "64ff1b27624afe2bcd44459d",
         "name": "John Doe",
-        "__v": 0
     }
 
 - POST a new person:
@@ -121,7 +118,6 @@ Response:
         "person": {
             "_id": "64ff1b27624afe2bcd44459d",
             "name": "John Doe",
-            "__v": 0
         }
     }
 
@@ -138,7 +134,6 @@ Response:
         "person": {
             "_id": "64ff1b27624afe2bcd44459d",
             "name": "John Doe",
-            "__v": 0
         }
     }
 
@@ -155,7 +150,6 @@ Response:
         "person": {
             "_id": "64ff1b27624afe2bcd44459d",
             "name": "John Doe",
-            "__v": 0
         }
     }
 
