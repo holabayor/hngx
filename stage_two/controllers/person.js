@@ -101,14 +101,18 @@ class PersonController {
   }
 
   static async delete(req, res) {
-    const { id } = req.params;
-    const result = await Person.deleteOne({ _id: id });
+    try {
+      const { id } = req.params;
+      const result = await Person.deleteOne({ _id: id });
 
-    if (result.deletedCount === 0) {
-      return res.status(404).send({ error: 'Person not found' });
+      if (result.deletedCount === 0) {
+        return res.status(404).send({ error: 'Person not found' });
+      }
+
+      return res.status(204).send({ message: 'Person deleted successfully' });
+    } catch (error) {
+      return res.status(500).send({ error: 'Internal server error' });
     }
-
-    return res.status(204).send({ message: 'Person deleted successfully' });
   }
 }
 
