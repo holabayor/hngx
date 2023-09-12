@@ -12,7 +12,7 @@ class PersonController {
     if (!persons) {
       res.status(200).send({ message: 'The database is empty' });
     }
-    res.status(200).send({ persons });
+    res.status(200).send(persons);
   }
 
   /**
@@ -60,10 +60,7 @@ class PersonController {
     const newPerson = new Person({ name });
     await newPerson.save();
 
-    return res.status(201).send({
-      message: 'Person created successfully',
-      newPerson,
-    });
+    return res.status(201).send(newPerson);
   }
 
   /**
@@ -91,10 +88,7 @@ class PersonController {
       person.name = name;
       await person.save();
 
-      return res.status(200).send({
-        message: 'Person updated successfully',
-        person,
-      });
+      return res.status(200).send(person);
     } catch (error) {
       return res.status(500).send({ error: 'Internal server error' });
     }
