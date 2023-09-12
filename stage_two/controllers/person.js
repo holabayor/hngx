@@ -23,15 +23,19 @@ class PersonController {
    * @return {Promise} A promise that resolves to the retrieved person or sends an error response.
    */
   static async getById(request, response) {
-    const { id } = request.params;
-    const person = await Person.findById(id);
+    try {
+      const { id } = request.params;
+      const person = await Person.findById(id);
 
-    if (!person) {
-      response.status(404).send({ error: 'Person not found' });
-      return;
+      if (!person) {
+        response.status(404).send({ error: 'Person not found' });
+        return;
+      }
+
+      response.status(200).send(person);
+    } catch (error) {
+      response.status(500).send({ error: 'Internal server error' });
     }
-
-    response.status(200).send(person);
   }
 
   /**
